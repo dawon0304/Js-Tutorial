@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 3의 배수에서 박수를 치면되는 게임 
+      어떤 숫자를 함수 안에 집어 넣으면 박수를 쳐야할지 말아야할지 판단해주는 함수를 만들고자 한다.
+  -->
+
+  <script>
+    
+    function 삼육구게임(num){
+      if(num % 9 == 0){
+        console.log('박수박수야야야');
+      }else if(num % 3== 0){
+        console.log('박수');
+      }else{
+        console.log('통과');
+      }
+        
+    }
+
+    삼육구게임(10)
+  </script>
+
+
+</body>
+</html>
