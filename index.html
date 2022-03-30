@@ -14,7 +14,7 @@
     <title>Hello, world!</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="dark">
 
   <div class="black-bg">
     <div class="white-bg">
@@ -79,14 +79,14 @@
       if(count % 2 == 0 ){
         document.querySelector('.badge').innerHTML = 'Dark🔄';
         // badge 짝수번 클릭시 내부 글자를 Dark로 변경
-        // jquery사용시
-        // $('.badge').html('Light🔄')
-      }else if(count % 2 !==0){
+        // jquery사용시 $('.badge').html('Light🔄')
+      }else if(count % 2 ==1){
         document.querySelector('.badge').innerHTML = 'Light🔄';
         // badge 홀수번 클릭시 내부 글자를 Light로 변경
       }
     })
   
+     
   </script>
 
 
