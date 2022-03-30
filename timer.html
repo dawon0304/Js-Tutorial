@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="alert alert-danger">
+    <span class="second">5</span>초 이내 구매시 사은품 증정!
+  </div>
+
+  <script>
+    // ~초 후에
+    // setTimeout(function(){
+    //   document.querySelector('.alert').style.display='none';
+    // }, 5000)
+
+    // ~초 마다
+    // setInterval(function(){
+    //   document.querySelector('.alert').style.display = 'block';
+    // }, 1000);
+
+    // 1초마다 5라는 문자를 1씩 감소, 0이되면 <div> 안보이게 만들기
+
+      
+      var count = 5;
+      var 타이머 = setInterval(function(){
+        count -=1;
+        if(count>=0){
+          document.querySelector('.second').innerHTML = count;
+        }
+      }, 1000);
+      
+      setTimeout(function(){
+        clearTimeout(타이머);
+        document.querySelector('.alert').style.display = 'none';
+      }, 5000)
+  </script>
+</body>
+</html>
