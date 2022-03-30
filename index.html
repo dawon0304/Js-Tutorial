@@ -36,6 +36,7 @@
     <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-brand">Navbar</span>
+    <span class="badge bg-dark">Dark 🔄</span>
     <button class="navbar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,8 +69,26 @@
       }
         
     });
+
+
+      //다크모드 버튼
+  // badge 클릭 횟수 기록
+  var count = 0;
+    $('.badge').on('click', function(){
+      count += 1;
+      if(count % 2 == 0 ){
+        document.querySelector('.badge').innerHTML = 'Dark🔄';
+        // badge 짝수번 클릭시 내부 글자를 Dark로 변경
+        // jquery사용시
+        // $('.badge').html('Light🔄')
+      }else if(count % 2 !==0){
+        document.querySelector('.badge').innerHTML = 'Light🔄';
+        // badge 홀수번 클릭시 내부 글자를 Light로 변경
+      }
+    })
   
   </script>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
