@@ -4,17 +4,35 @@
 // -모든 tab-content에 show클래스 제거
 // - 0 번째 content에 show클래스 추가
 
-for (let i = 0; i< $('.tab-button').length; i++){
-    var 버튼 = $('.tab-button');
-    var 내용 = $('.tab-content')
-    버튼.eq(i).on('click', function(){
-    버튼.removeClass('orange');
-    버튼.eq(i).addClass('orange');
-    내용.removeClass('show');
-    내용.eq(i).addClass('show');
-})
-}
+// for 이용한 반복문으로 tab기능 만들기
+// for (let i = 0; i< $('.tab-button').length; i++){
+//     탭열기(i)
+// }
 
+// 
+$('.list').click(function(e){
+    if (e.target == document.querySelectorAll('.tab-button')[0]){
+        탭열기(0)
+    }
+    if (e.target == document.querySelectorAll('.tab-button')[1]){
+        탭열기(1)
+    }
+    if (e.target == document.querySelectorAll('.tab-button')[2]){
+        탭열기(2)
+    }
+})
+
+
+function 탭열기(숫자){
+        var 버튼 = $('.tab-button');
+        var 내용 = $('.tab-content')
+        버튼.eq(숫자).on('click', function(){
+        버튼.removeClass('orange');
+        버튼.eq(숫자).addClass('orange');
+        내용.removeClass('show');
+        내용.eq(숫자).addClass('show');
+    })
+}
 
 
 // $('.tab-button').eq(1).on('click', function(){
