@@ -4,7 +4,7 @@
 // -모든 tab-content에 show클래스 제거
 // - 0 번째 content에 show클래스 추가
 
-for (let i = 0; i<3; i++){
+for (let i = 0; i< $('.tab-button').length; i++){
     var 버튼 = $('.tab-button');
     var 내용 = $('.tab-content')
     버튼.eq(i).on('click', function(){
