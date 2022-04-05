@@ -19,7 +19,6 @@
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
-
       <form action="success.html">
         <div class="my-3">
           <input type="text" class="form-control" id="email">
@@ -57,6 +56,13 @@
   </div>
 
   <script>
+    // 로그인 버튼 누르면 '로그인 하세요 ' 창 띄우기
+    $('#login').on('click', function(){
+      $('.black-bg').css('display', 'block');
+    })
+
+
+    // 아이디, 비번 미입력시 알림창띄우기
     $('#send').on('click', function(e){
       if(document.getElementById('email').value == ''){
         e.preventDefault();
@@ -69,8 +75,22 @@
       }
         
     });
- 
 
+    // 로그인 창을 검은배경 누르면 닫히게 만들기
+    // $('.black-bg').on('click', function(e){
+
+    //   if(e.target == $('.black-bg')){
+    //     $('.black-bg').css('display', 'none');
+    //   }
+      
+    // })
+
+
+      document.querySelector('.black-bg').addEventListener('click', function(e){
+        if(e.target == document.querySelector('.black-bg')){
+          document.querySelector('.black-bg').style.display = 'none';
+        }
+      })
       //다크모드 버튼
   // badge 클릭 횟수 기록
   var count = 0;
