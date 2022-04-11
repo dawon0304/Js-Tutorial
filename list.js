@@ -4,9 +4,44 @@ var products = [
     { id : 2, price : 60000, title : 'Black Monastery' }
   ];  
 
-  console.log(products);
 
-// 첫번째 card에 product[0] 번 넣기
-// card-title에 
+  
+  // 카드레이아웃3개 만들기
+  // var 템플릿 = 
+  // `<div class="col-sm-4">
+  //       <img src="https://via.placeholder.com/600" class="w-100">
+  //       <h5>${products[0].title}</h5>
+  //       <p>가격 : ${products[0].price }</p>
+  //     </div>`
+  //     $('.row').append(템플릿)
 
-document.querySelector('.card-title')[0].innerHTML = products.id[0].title;
+  //     var 템플릿 = 
+  // `<div class="col-sm-4">
+  //       <img src="https://via.placeholder.com/600" class="w-100">
+  //       <h5>${products[1].title}</h5>
+  //       <p>가격 : ${products[1].price }</p>
+  //     </div>`
+  //     $('.row').append(템플릿)
+
+
+  //     var 템플릿 = 
+  // `<div class="col-sm-4">
+  //       <img src="https://via.placeholder.com/600" class="w-100">
+  //       <h5>${products[2].title}</h5>
+  //       <p>가격 : ${products[2].price }</p>
+  //     </div>`
+  //     $('.row').append(템플릿)
+
+
+  // 반복문으로 간단하게 만들어주기
+  products.forEach((a, i) => {
+    var 템플릿 = 
+      `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${products[i].title}</h5>
+        <p>가격 : ${products[i].price }</p>
+      </div>`
+      $('.row').append(템플릿)
+  })
+
+  
