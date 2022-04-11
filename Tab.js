@@ -10,28 +10,28 @@
 // }
 
 // 
-$('.list').click(function(e){
-    if (e.target == document.querySelectorAll('.tab-button')[0]){
-        탭열기(0)
-    }
-    if (e.target == document.querySelectorAll('.tab-button')[1]){
-        탭열기(1)
-    }
-    if (e.target == document.querySelectorAll('.tab-button')[2]){
-        탭열기(2)
-    }
+$('.list').click(function (e) {
+  if (e.target == document.querySelectorAll('.tab-button')[0]) {
+    탭열기(0)
+  }
+  if (e.target == document.querySelectorAll('.tab-button')[1]) {
+    탭열기(1)
+  }
+  if (e.target == document.querySelectorAll('.tab-button')[2]) {
+    탭열기(2)
+  }
 })
 
 
-function 탭열기(숫자){
-        var 버튼 = $('.tab-button');
-        var 내용 = $('.tab-content')
-        버튼.eq(숫자).on('click', function(){
-        버튼.removeClass('orange');
-        버튼.eq(숫자).addClass('orange');
-        내용.removeClass('show');
-        내용.eq(숫자).addClass('show');
-    })
+function 탭열기(숫자) {
+  var 버튼 = $('.tab-button');
+  var 내용 = $('.tab-content')
+  버튼.eq(숫자).on('click', function () {
+    버튼.removeClass('orange');
+    버튼.eq(숫자).addClass('orange');
+    내용.removeClass('show');
+    내용.eq(숫자).addClass('show');
+  })
 }
 
 
@@ -50,3 +50,52 @@ function 탭열기(숫자){
 // })
 
 
+// 상세페이지 상품명/가격 변경 코드
+
+var car2 = {
+  name: '소나타',
+  price: [50000, 3000, 40000]
+}
+document.querySelector('.card-title').innerHTML = car2.name;
+document.querySelector('.card-price').innerHTML = car2.price[1];
+
+
+
+// select 
+
+var pants = [28,30, 32,34];
+var shirths = [95, 100, 105];
+
+
+document.querySelectorAll('.form-select')[0].addEventListener('input', function() {
+  var user = this.value;
+  if (user == '셔츠') {
+    
+    document.querySelectorAll('.form-select')[1].classList.remove('form-hide');
+    document.querySelectorAll('.form-select')[1].innerHTML = "";
+    shirths.forEach(function(a){
+      $('.form-select').eq(1).append(`<option>${a}</option>`);
+    })
+  };
+
+  if(user == '모자'){
+    document.querySelectorAll('.form-select')[1].classList.add('form-hide');
+  };
+
+  if(user =='바지'){
+    document.querySelectorAll('.form-select')[1].classList.remove('form-hide');
+    document.querySelectorAll('.form-select')[1].innerHTML = "";
+    pants.forEach(function(a){
+      $('.form-select').eq(1).append(`<option>${a}</option>`);
+    });
+  }
+});
+
+
+// object 자료 갯수만큼 반복문을 돌리려면 < for in 반복문>
+var obj = {name: 'kim', age: 20}
+
+for (var key in obj) {
+  console.log(obj[key]);
+  // kim, 20출력
+}
