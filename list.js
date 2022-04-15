@@ -3,7 +3,26 @@ var products = [
     { id : 1, price : 50000, title : 'Springfield Shirt' },
     { id : 2, price : 60000, title : 'Black Monastery' }
   ];  
+  $('#abc').click(function(){
+    var sort = products.sort();
+    var sort_reverse = sort.reverse();
+    console.log(sort_reverse);
+  })
+  
 
+
+    $('.row').html('');
+    products.forEach((a, i) => {
+      var 템플릿 = 
+        `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+          <h5>${products[i].title}</h5>
+          <p>가격 : ${products[i].price }</p>
+        </div>`
+        $('.row').append(템플릿)
+    })
+  
+  
 
   
   // 카드레이아웃3개 만들기

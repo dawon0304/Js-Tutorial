@@ -29,48 +29,50 @@
 
 <div class="container">
   <button class="btn btn-danger" id="more">더보기</button>
+  <button class="btn btn-danger" id="array">가격순 정렬</button>
+  <button class="btn btn-danger" id="abc">다나가순 정렬</button>
 </div>
 
 <script>
-  $('#more').click(function(){
-    for (let i=0; i<3; i++) {
-      if(i == 1){
-        $.get('https://codingapple1.github.io/js/more1.json')
-        .done((data)=>{
-        console.log(data);
+  // $('#more').click(function(){
+  //   for (let i=0; i<3; i++) {
+  //     if(i == 1){
+  //       $.get('https://codingapple1.github.io/js/more1.json')
+  //       .done((data)=>{
+  //       console.log(data);
 
-        data.forEach((a,i) => {
-          var 템플릿 = 
-          `<div class="col-sm-4">
-            <img src="https://via.placeholder.com/600" class="w-100">
-            <h5>${data[i].title}</h5>
-            <p>가격 : ${data[i].price }</p>
-          </div>`
-        $('.row').append(템플릿)
-        })
-        });
-      }
+  //       data.forEach((a,i) => {
+  //         var 템플릿 = 
+  //         `<div class="col-sm-4">
+  //           <img src="https://via.placeholder.com/600" class="w-100">
+  //           <h5>${data[i].title}</h5>
+  //           <p>가격 : ${data[i].price }</p>
+  //         </div>`
+  //       $('.row').append(템플릿)
+  //       })
+  //       });
+  //     }
       
-    }
+  //   }
       
 
-      $.get('https://codingapple1.github.io/js/more2.json')
-      .done((data2)=>{
-        console.log(data2);
+  //     $.get('https://codingapple1.github.io/js/more2.json')
+  //     .done((data2)=>{
+  //       console.log(data2);
 
-        data2.forEach((b,i)=>{
-          var 템플릿 = 
-          `<div class="col-sm-4">
-            <img src="https://via.placeholder.com/600" class="w-100">
-            <h5>${data2[i].title}</h5>
-            <p>가격 : ${data2[i].price }</p>
-          </div>`
-      $('.row').append(템플릿)
-    })
-        })
+  //       data2.forEach((b,i)=>{
+  //         var 템플릿 = 
+  //         `<div class="col-sm-4">
+  //           <img src="https://via.placeholder.com/600" class="w-100">
+  //           <h5>${data2[i].title}</h5>
+  //           <p>가격 : ${data2[i].price }</p>
+  //         </div>`
+  //     $('.row').append(템플릿)
+  //   })
+  //       })
       
       
-  });
+  // });
 </script>
 
 
